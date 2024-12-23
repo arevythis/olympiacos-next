@@ -1,0 +1,150 @@
+
+body {
+    background-image: url('/stad.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #000;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 100px; /* Adds space between navbar and content */
+}
+
+.navbar {
+    z-index: 1020;
+}
+#username {
+background: rgba(255, 255, 255, 0.7); /* Slightly transparent white */
+    backdrop-filter: blur(5px);
+    color: rgb(117, 31, 31);
+padding: 2px 5px; /* Add some padding */
+border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+/* Add some margin between navbar items */
+.navbar-nav .nav-item {
+margin-right: 15px; /* Adjust the value as needed */
+}
+/* Ensure the dropdown menu appears above other content */
+.navbar .dropdown-menu {
+z-index: 1050; /* Higher than most elements */
+}
+
+/* Ensure the parent container has a higher stacking context */
+
+.navbar .dropdown-item {
+background: rgba(175, 21, 21, 0.7); /* Slightly transparent red */
+    backdrop-filter: blur(5px);
+    color: white;
+}
+.mask-custom {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, .15);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Ensure images and logos scale better on mobile */
+.team-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain; /* Ensures logos fit without distortion */
+    margin-right: 30px; /* Keeps spacing between logos */
+    border: none; /* Remove the border to eliminate white square */
+    background: none; /* Remove any background to keep them transparent */
+}
+
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+    color: #fff;
+}
+
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+    color: #fff;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scroll,
+.navbar-scrolled {
+    background-color: #cbbcb1;
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+    letter-spacing: 3px;
+}
+
+.navbar {
+    z-index: 1020; /* Keep it below Bootstrap modals */
+}
+
+.mask-custom {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, .15);
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+    letter-spacing: 3px;
+}
+
+/* Mobile-friendly adjustments */
+@media screen and (max-width: 768px) {
+    .card-body .row {
+        flex-direction: column; /* Stack content vertically */
+    }
+
+    .card {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        margin: 0; /* Prevent navbar items from being too wide */
+    }
+
+    .team-logo {
+        width: 40px; /* Adjust logo size for mobile */
+        height: 40px;
+        max-width: 40px; /* Enforcing the same size on all logos */
+        max-height: 40px;
+    }
+
+    .stat-item {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 14px; /* Scale font size for mobile */
+    }
+
+    th, td {
+        padding: 8px; /* Make padding smaller for mobile */
+    }
+}

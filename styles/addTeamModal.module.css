@@ -1,0 +1,172 @@
+
+#addMatchButton {
+    max-width: 100%; /* Prevent the button from exceeding parent container */
+    white-space: nowrap; /* Avoid text wrapping inside the button */
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+.teamz {
+    display: inline-block; /* Make it behave like a button */
+    background: linear-gradient(to right, #56ab2f, #a8e063); /* Gradient background like buttons */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding similar to buttons */
+    font-size: 1rem; /* Same font size as buttons */
+    font-weight: bold; /* Bold text for emphasis */
+    border-radius: 5px; /* Rounded corners like buttons */
+    text-align: center; /* Center text inside */
+    text-decoration: none; /* Remove underline for link */
+    transition: all 0.3s ease-in-out; /* Smooth transition on hover */
+}
+.teamz:hover {
+    background: linear-gradient(to left, #56ab2f, #a8e063); /* Hover gradient effect */
+    box-shadow: 0 4px 10px rgba(88, 171, 47, 0.5); /* Optional shadow effect on hover */
+    color: white; /* Keep text color on hover */
+}
+.teamz:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: 0 0 8px rgba(88, 171, 47, 0.7); /* Optional focus effect */
+}
+.form-step {
+    display: none;
+}
+.form-step.active {
+    display: block;
+}
+.modal-content {
+    border-radius: 20px;
+    background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Ensure rounded corners are respected */
+    animation: modal-fade-in 0.5s ease-in-out;
+}
+.modal-header {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.modal-header .btn-close {
+    filter: invert(1);
+}
+.modal-body {
+    padding: 20px;
+}
+#show-signup-link {
+    color: #0d6efd; /* Bootstrap primary color */
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+}
+#show-signup-link:hover {
+    color: #0056b3; /* Darker shade of primary color */
+    text-decoration: underline;
+}
+#addMatchForm .btn-primary {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+#addMatchForm .btn-primary:hover {
+    background: linear-gradient(to left, #ff7e5f, #feb47b);
+    box-shadow: 0 4px 10px rgba(255, 126, 95, 0.5);
+}
+.modal-body .form-control {
+    border: 2px solid #dee2e6;
+    transition: all 0.3s ease-in-out;
+}
+.modal-body .form-control:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.5);
+}
+#scorersContainer .scorer-input {
+    margin-bottom: 15px;
+    border: 1px solid #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+#addScorerBtn {
+    background: linear-gradient(to right, #56ab2f, #a8e063);
+    color: white;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+#addScorerBtn:hover {
+    background: linear-gradient(to left, #56ab2f, #a8e063);
+    box-shadow: 0 4px 10px rgba(88, 171, 47, 0.5);
+}
+@keyframes modal-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.table-responsive {
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        top: 0; /* Make sure navbar stays on top */
+        width: 100%;
+        z-index: 1020;
+    }
+    .navbar-nav {
+        display: block;
+    }
+    .matches-container {
+        margin-top: 120px; /* Adjust based on navbar height */
+    }
+    .table-responsive {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    .table th, .table td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    body {
+        padding-top: 80px; /* Adjust the value as necessary to avoid overlap */
+    }
+    .btn-primary, #addScorerBtn {
+        font-size: 0.9rem;
+    }
+    .main-content {
+        margin-top: 120px; /* Same as navbar height */
+    }
+}
+/* Add this CSS to your existing styles */
+#username {
+background: rgba(255, 255, 255, 0.7); /* Slightly transparent white */
+    backdrop-filter: blur(5px);
+    color: rgb(117, 31, 31);
+padding: 2px 5px; /* Add some padding */
+border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+/* Add some margin between navbar items */
+.navbar-nav .nav-item {
+margin-right: 15px; /* Adjust the value as needed */
+}
+/* Ensure the dropdown menu appears above other content */
+.navbar .dropdown-menu {
+z-index: 1050; /* Higher than most elements */
+position: absolute;
+}
+
+/* Ensure the parent container has a higher stacking context */
+
+.navbar .dropdown-item {
+background: rgba(175, 21, 21, 0.7); /* Slightly transparent red */
+    backdrop-filter: blur(5px);
+    color: white;
+}

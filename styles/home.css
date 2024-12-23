@@ -1,0 +1,343 @@
+body {
+    background-image: url('/stad.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #000;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Make sure the body takes up full viewport height */
+}
+
+.main-content {
+    flex: 1; /* This makes sure that the main content takes up the remaining space */
+}
+
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1010; /* Lower z-index to ensure navbar is on top */
+}
+
+.table th {
+    text-align: center;
+    padding: 10px; /* Add some spacing */
+    font-size: 1rem;
+    color: #f8f9fa; /* Light text for contrast */
+    position: sticky;
+    top: 0;
+    z-index: 1010; /* Lower z-index to ensure navbar is on top */
+    background: rgba(203, 188, 177, 0.7); /* Transparent background similar to navbar */
+    backdrop-filter: blur(5px); /* Apply blur effect to match navbar transparency */
+}
+
+.table-dark th:nth-child(odd) {
+    background: rgba(175, 21, 21, 0.7); /* Slightly transparent red */
+    backdrop-filter: blur(5px);
+    color: white;
+}
+
+.table-dark th:nth-child(even) {
+    background: rgba(255, 255, 255, 0.7); /* Slightly transparent white */
+    backdrop-filter: blur(5px);
+    color: rgb(117, 31, 31);
+}
+
+.table tr:hover {
+    background-color: #dee2e6;
+    cursor: pointer;
+}
+
+.table td {
+    padding: 10px; /* Add padding for readability */
+    text-align: center; /* Center-align for uniformity */
+    font-size: 0.9rem;
+    color: #212529; /* Darker text for contrast */
+    background: rgba(255, 255, 255, 0.7); /* Slightly transparent white background */
+    backdrop-filter: blur(5px); /* Optional blur effect to enhance transparency */
+}
+
+.table tr:nth-child(odd) td {
+    background: rgba(255, 255, 255, 0.7); /* Slightly transparent for odd rows */
+    backdrop-filter: blur(5px);
+}
+
+.table tr:nth-child(even) td {
+    background: rgba(233, 236, 239, 0.7); /* Slightly transparent for even rows */
+    backdrop-filter: blur(5px);
+}
+
+.table-link {
+    color: #000000; /* Bootstrap primary color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+}
+
+.table-link:hover {
+    color: #000000; /* Darker hover color */
+}
+
+.table .btn-danger {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    background: linear-gradient(to right, #ff4e50, #f7b42c); /* Gradient for delete button */
+    border: none;
+}
+
+.table .btn-danger:hover {
+    background: linear-gradient(to right, #ff0000, #ff8000); /* Hover effect */
+    color: #fff;
+}
+
+.matches-container {
+    margin-top: 80px; /* Adjust the value to your navbar height */
+}
+
+.table-dark tbody {
+    background-color: white !important; /* Force white background */
+}
+
+footer {
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    width: 100%; /* Ensure the footer spans across the page */
+}
+
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+    color: #fff;
+}
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+    color: #fff;
+}
+
+.navbar-scroll,
+.navbar-scrolled {
+    background-color: #cbbcb1;
+}
+
+.mask-custom {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, .15);
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+    letter-spacing: 3px;
+}
+
+.navbar {
+    z-index: 1030; /* Higher z-index to ensure it's on top of the table */
+}
+
+#addMatchButton {
+    max-width: 100%; /* Prevent the button from exceeding parent container */
+    white-space: nowrap; /* Avoid text wrapping inside the button */
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.teamz {
+    display: inline-block; /* Make it behave like a button */
+    background: linear-gradient(to right, #56ab2f, #a8e063); /* Gradient background like buttons */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding similar to buttons */
+    font-size: 1rem; /* Same font size as buttons */
+    font-weight: bold; /* Bold text for emphasis */
+    border-radius: 5px; /* Rounded corners like buttons */
+    text-align: center; /* Center text inside */
+    text-decoration: none; /* Remove underline for link */
+    transition: all 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+.teamz:hover {
+    background: linear-gradient(to left, #56ab2f, #a8e063); /* Hover gradient effect */
+    box-shadow: 0 4px 10px rgba(88, 171, 47, 0.5); /* Optional shadow effect on hover */
+    color: white; /* Keep text color on hover */
+}
+
+.teamz:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: 0 0 8px rgba(88, 171, 47, 0.7); /* Optional focus effect */
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.modal-content {
+    border-radius: 20px;
+    background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Ensure rounded corners are respected */
+    animation: modal-fade-in 0.5s ease-in-out;
+}
+
+.modal-header {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+#show-signup-link {
+    color: #0d6efd; /* Bootstrap primary color */
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+}
+
+#show-signup-link:hover {
+    color: #0056b3; /* Darker shade of primary color */
+    text-decoration: underline;
+}
+
+#addMatchForm .btn-primary {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+#addMatchForm .btn-primary:hover {
+    background: linear-gradient(to left, #ff7e5f, #feb47b);
+    box-shadow: 0 4px 10px rgba(255, 126, 95, 0.5);
+}
+
+.modal-body .form-control {
+    border: 2px solid #dee2e6;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal-body .form-control:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.5);
+}
+
+#scorersContainer .scorer-input {
+    margin-bottom: 15px;
+    border: 1px solid #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+#addScorerBtn {
+    background: linear-gradient(to right, #56ab2f, #a8e063);
+    color: white;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#addScorerBtn:hover {
+    background: linear-gradient(to left, #56ab2f, #a8e063);
+    box-shadow: 0 4px 10px rgba(88, 171, 47, 0.5);
+}
+
+@keyframes modal-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        top: 0; /* Make sure navbar stays on top */
+        width: 100%;
+        z-index: 1040; /* Higher z-index to ensure it's on top of the table */
+    }
+    .navbar-nav {
+        display: block;
+    }
+    .matches-container {
+        margin-top: 120px; /* Adjust based on navbar height */
+    }
+    .table-responsive {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    .table th, .table td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    body {
+        padding-top: 80px; /* Adjust the value as necessary to avoid overlap */
+    }
+    .btn-primary, #addScorerBtn {
+        font-size: 0.9rem;
+    }
+    .main-content {
+        margin-top: 120px; /* Same as navbar height */
+    }
+    /* Apply darker blur background when navbar is toggled on mobile */
+    .navbar-collapse.show {
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.5); /* Darker background */
+    }
+
+    /* Ensure the links inside the navbar are white */
+    .navbar-collapse.show .nav-link {
+        color: #fff !important;
+    }
+}
+
+/* Add this CSS to your existing styles */
+#username {
+    background: rgba(255, 255, 255, 0.7); /* Slightly transparent white */
+    backdrop-filter: blur(5px);
+    color: rgb(117, 31, 31);
+    padding: 2px 5px; /* Add some padding */
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+/* Add some margin between navbar items */
+.navbar-nav .nav-item {
+    margin-right: 15px; /* Adjust the value as needed */
+}
+
+/* Ensure the dropdown menu appears above other content */
+.navbar .dropdown-menu {
+    z-index: 1050; /* Higher than most elements */
+    position: absolute;
+}
+
+/* Ensure the parent container has a higher stacking context */
+.navbar .dropdown-item {
+    background: rgba(175, 21, 21, 0.7); /* Slightly transparent red */
+    backdrop-filter: blur(5px);
+    color: white;
+}
