@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/home.css'; // Ensure your custom styles are imported after Bootstrap
+import '../styles/match.css';
+import '../styles/teams.css';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
