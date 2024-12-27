@@ -7,7 +7,7 @@ import SignupModal from '../components/SignupModal';
 import AddMatchModal from '../components/AddMatchModal';
 import AddTeamModal from '../components/AddTeamModal';
 import { useAuth } from '../context/AuthContext';
-import '../styles/match.css';
+
 
 const MatchPage = () => {
   const [match, setMatch] = useState(null);
