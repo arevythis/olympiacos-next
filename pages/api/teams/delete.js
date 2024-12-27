@@ -1,14 +1,12 @@
-// api/teams/delete.js
 import { Pool } from 'pg';
 
+// Use environment variables for the database connection
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'football',
-  password: '1891999vv',
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false, // Required for connecting to Supabase
+  },
 });
-
 export default async function handler(req, res) {
   if (req.method === 'DELETE') {
     const { id } = req.body; // Ensure the id is coming from the request body
