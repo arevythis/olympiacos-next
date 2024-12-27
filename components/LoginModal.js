@@ -90,7 +90,7 @@ const LoginModal = ({ onClose, showSignupModal }) => {
                 onClick={showSignupModal}
                 style={{ padding: 0, border: 'none', background: 'none', color: 'inherit' }}
               >
-                Don`&apos;`t have an account? <strong>Sign up now!</strong>
+                Don&apos;t have an account? <strong>Sign up now!</strong>
               </button>
             </div>
           </div>
