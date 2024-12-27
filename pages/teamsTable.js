@@ -7,7 +7,7 @@ import SignupModal from '../components/SignupModal';
 import AddMatchModal from '../components/AddMatchModal';
 import AddTeamModal from '../components/AddTeamModal';
 import { useAuth } from '../context/AuthContext';
-import '../styles/teams.css';
+
 
 const TeamsTable = () => {
   const [teams, setTeams] = useState([]);
