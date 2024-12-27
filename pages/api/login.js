@@ -1,13 +1,11 @@
 import { Pool } from 'pg';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
 
+// Use environment variables for the database connection
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'football',
-  password: '1891999vv',
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false, // Required for connecting to Supabase
+  },
 });
 
 const JWT_SECRET = "Vf90g1Hhvft6nMJ08A9fdX3t27L99xqXp";
