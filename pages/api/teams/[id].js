@@ -1,4 +1,5 @@
-require('dotenv').config();
+import 'dotenv/config';
+
 import { Pool } from 'pg';
 
 // Use environment variables for the database connection
