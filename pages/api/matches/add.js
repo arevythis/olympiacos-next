@@ -2,7 +2,7 @@ import { Pool } from 'pg';
 
 // Initialize the PostgreSQL connection pool
 const pool = new Pool({
-  connectionString:'postgresql://postgres:JqhMCyobsOFiAiXg@db.hsnmfpkitybsxdizqoin.supabase.co:5432/postgres',
+  connectionString:process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false, // Avoid self-signed certificate errors during dev
           // Enforce SSL connections (ensure security)

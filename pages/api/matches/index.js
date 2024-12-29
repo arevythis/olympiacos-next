@@ -1,7 +1,7 @@
 import { Pool } from 'pg';
 
 const pool = new Pool({
-  connectionString:'postgresql://postgres:JqhMCyobsOFiAiXg@db.hsnmfpkitybsxdizqoin.supabase.co:5432/postgres',
+  connectionString:process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false,  // Disable SSL certificate validation for local dev
             // Ensure SSL mode is required for secure connection

@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'; // jsonwebtoken import
 
 // Initialize PostgreSQL connection pool using environment variables
 const pool = new Pool({
-  connectionString:'postgresql://postgres:JqhMCyobsOFiAiXg@db.hsnmfpkitybsxdizqoin.supabase.co:5432/postgres',
+  connectionString:process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false, // Required for connecting to Supabase
          // Enforces SSL connection to the database

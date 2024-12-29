@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs'; // bcrypt import for password hashing
 
 // Use environment variables for the database connection
 const pool = new Pool({
-  connectionString:'postgresql://postgres:JqhMCyobsOFiAiXg@db.hsnmfpkitybsxdizqoin.supabase.co:5432/postgres',
+  connectionString:process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false, // Required for Supabase SSL connection
     
