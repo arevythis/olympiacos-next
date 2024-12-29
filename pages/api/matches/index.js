@@ -1,30 +1,35 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
 import { Pool } from 'pg';
 
-// Use environment variables for the database connection
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false, // Required for connecting to Supabase
-      sslmode: 'require'
+    rejectUnauthorized: false,  // Disable SSL certificate validation for local dev
+            // Ensure SSL mode is required for secure connection
   },
 });
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
-      const result = await pool.query('SELECT * FROM matches');
+      // Making the DB query to fetch matches
+      const result = await pool.query(`
+        SELECT * FROM matches;
+      `);
+
+      // If no matches are found, return 404
       if (result.rows.length === 0) {
-        return res.status(404).json({ error: 'No matches found' });
+        return res.status(404).json({ message: 'No matches found' });
       }
-      res.json(result.rows);
+
+      // Return matches in response
+      return res.status(200).json(result.rows);
     } catch (err) {
+      // Capture error details for debugging
       console.error('Error fetching matches:', err);
-      res.status(500).json({ error: 'Failed to fetch matches' });
+      res.status(500).json({ error: 'Internal Server Error' });
     }
   } else {
+    // Handle unsupported HTTP methods
     res.setHeader('Allow', ['GET']);
     res.status(405).end(`Method ${req.method} not allowed`);
   }
