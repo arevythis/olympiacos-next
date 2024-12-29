@@ -18,6 +18,8 @@ const HomePage = () => {
   const { currentUser, setCurrentUser, logout, isLoginModalOpen, setIsLoginModalOpen } = useAuth();
 
   useEffect(() => {
+    console.log(process.env.DATABASE_URL);
+    console.log(process.env.JWT_SECRET);
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     
