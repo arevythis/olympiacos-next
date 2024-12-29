@@ -2,7 +2,7 @@ const { Client } = require('pg'); // For PostgreSQL
 
 const testConnection = async () => {
   const client = new Client({
-    connectionString: process.env.DATABASE_URL, // Ensure this variable is configured in Vercel
+    connectionString:'postgresql://postgres:JqhMCyobsOFiAiXg@db.hsnmfpkitybsxdizqoin.supabase.co:5432/postgres',
     ssl: { rejectUnauthorized: false }, // Adjust SSL settings as needed
   });
 
