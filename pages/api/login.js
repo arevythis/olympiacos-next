@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'; // jsonwebtoken import
 
 // Initialize PostgreSQL connection pool using environment variables
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString:'postgresql://postgres:JqhMCyobsOFiAiXg@db.hsnmfpkitybsxdizqoin.supabase.co:5432/postgres',
   ssl: {
     rejectUnauthorized: false, // Required for connecting to Supabase
          // Enforces SSL connection to the database
@@ -12,7 +12,7 @@ const pool = new Pool({
 });
 
 // Retrieve JWT secret from environment variables
-const JWT_SECRET = process.env.JWT_SECRET; 
+const JWT_SECRET ='Vf90g1Hhvft6nMJ08A9fdX3t27L99xqXp';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {

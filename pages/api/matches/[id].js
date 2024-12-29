@@ -2,7 +2,7 @@ import { Pool } from 'pg';
 
 // Use environment variables for database connection
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString:'postgresql://postgres:JqhMCyobsOFiAiXg@db.hsnmfpkitybsxdizqoin.supabase.co:5432/postgres',
   ssl: {
     rejectUnauthorized: false, // Bypass SSL certificate verification during local development
           // Ensure SSL is always used for the connection
